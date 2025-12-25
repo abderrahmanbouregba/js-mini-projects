@@ -1,0 +1,17 @@
+div{
+    display: flex;
+    gap: 15px;
+    margin: 30px;
+}
+
+button{
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+p{
+    font-size: 30px;
+    margin: 20px;
+}
