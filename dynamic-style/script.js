@@ -7,7 +7,18 @@ let counter = 0;
         const message = document.getElementById('message');
         const result = document.getElementById('status');
 
-        
+        function updateStatusColor() {
+            if (counter < 5){
+                result.classList.remove('orangeText', 'redText');
+                result.classList.add('greenText');
+            }else if (counter >= 5 && counter <= 9){
+                result.classList.remove('greenText', 'redText');
+                result.classList.add('orangeText');
+            }else{
+                result.classList.remove('orangeText', 'greenText');
+                result.classList.add('redText');
+            }
+        }
 
          function testLogic() {if(counter < 5){
             result.textContent = "Low value";
@@ -22,6 +33,7 @@ let counter = 0;
             paragraph.textContent = counter;
             message.textContent = '';
             testLogic();
+            updateStatusColor();
         }
 
         //if counter < 10, increment
@@ -30,13 +42,10 @@ let counter = 0;
         function incrementFunc() {
             if (counter < 10){
             counter++;
-            // paragraph.textContent = counter;
-            // message.textContent = '';
             updateDisplay();
-            }else{
-                message.textContent = "sorry max value is 10";
-            }
-            // testLogic();
+        }else{
+            message.textContent = "sorry max value is 10";
+        }
         }
 
         //if counter > 0, dicrement
@@ -46,19 +55,13 @@ let counter = 0;
             if (counter > 0){
             counter--;
             updateDisplay();
-            // paragraph.textContent = counter;
-            // message.textContent = '';
-            }else{
-                message.textContent = "sorry min value is 0";
-            }
-            // testLogic();
+        }else{
+            message.textContent = "sorry min value is 0";
+        }
         }
 
         function resetFunc() {
             counter = 0;
-            // paragraph.textContent = counter;
-            // message.textContent = '';
-            // testLogic();
             updateDisplay();
         }
 
